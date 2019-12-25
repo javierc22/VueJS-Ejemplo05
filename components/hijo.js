@@ -3,7 +3,16 @@ Vue.component('hijo',{
    `
    <div class="p-5 bg-success text-white">
       <h4>Componente Hijo: {{ numero }}</h4>
+      <h4>Nombre: {{ nombre }}</h4>
    </div>
    `,
-   props: ['numero']
+   props: ['numero'],
+   data() {
+      return {
+         nombre: 'Elba Lazo'
+      }
+   },
+   mounted() {
+      this.$emit('nombreHijo', this.nombre)
+   }
 });
